@@ -1,0 +1,34 @@
+{
+  "name": "itc-gov",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@react-keycloak/web": "^3.4.0",
+    "@reduxjs/toolkit": "^1.9.7",
+    "antd": "^5.9.4",
+    "axios": "^1.5.1",
+    "busboy": "^1.6.0",
+    "framer-motion": "^10.16.4",
+    "mime-types": "^2.1.35",
+    "moment": "^2.29.4",
+    "next": "13.5.4",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-google-recaptcha": "^3.1.0",
+    "react-player": "^2.13.0",
+    "sharp": "^0.32.6",
+    "swiper": "^10.3.1"
+  },
+  "devDependencies": {
+    "@tinymce/tinymce-react": "^4.3.0",
+    "autoprefixer": "^10",
+    "postcss": "^8.4.31",
+    "tailwindcss": "^3"
+  }
+}

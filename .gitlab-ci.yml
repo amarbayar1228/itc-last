@@ -1,0 +1,28 @@
+stages:
+  - deploy-staging
+
+cache:
+  paths:
+    - node_modules/
+    - .next/cache/
+
+variables:
+  ITC_ARTIFACT_ID: 'itc-gov-gui1'
+  
+deploy-staging:
+  stage: deploy-staging
+  variables:
+    DOCKER_HOST: '192.168.88.43:2375'
+  script:
+    - npm install
+    - npm i sharp
+    - npm run build
+    - rm -rf /home/file/gui/itc.gov.mn.new/*
+    - cp -r * /home/file/gui/itc.gov.mn.new/
+    - cp -r ./.next/ /home/file/gui/itc.gov.mn.new/
+    - cp .env /home/file/gui/itc.gov.mn.new/
+    - docker -H ${DOCKER_HOST} service update --force ${ITC_ARTIFACT_ID}
+  tags:
+    - ebarimt-node18-stag
+  only:
+    - tags
